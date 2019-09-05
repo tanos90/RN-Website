@@ -4,7 +4,7 @@
       <parallax class="page-header-image" style="background-image:url('img/bg5.jpg')"></parallax>
       <div class="content-center">
         <div class="container">
-          <transition name="slide">
+          <transition name="top">
             <h1 style="transition-duration: 1s;" v-if="isVisible" class="title-text">
               <img src="img/logo-text.png" class="logo-text" alt="logo" />
             </h1>
