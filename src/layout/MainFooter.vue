@@ -17,12 +17,12 @@
       </nav>
       <div class="col-md-4 row">
         <span class="col-md-12 row">
-          <span class="col-lg-6 col-md-12 col-sm-12">Monday to Friday:</span>
-          <span class="col-lg-6 col-md-12 col-sm-12">8:15 AM - 6:00 PM</span>
+          <span class="col-lg-8 col-md-12 col-sm-12">Monday to Friday:</span>
+          <span class="col-lg-4 col-md-12 col-sm-12">8:15 AM - 6:00 PM</span>
         </span>
         <span class="col-md-12 row">
-          <span class="col-lg-6 col-md-12 col-sm-12">Saturday:</span>
-          <span class="col-lg-6 col-md-12 col-sm-12">8:15 AM - 2:00 PM</span>
+          <span class="col-lg-8 col-md-12 col-sm-12">Saturday:</span>
+          <span class="col-lg-4 col-md-12 col-sm-12">8:15 AM - 2:00 PM</span>
         </span>
       </div>
       <div

@@ -136,7 +136,7 @@
         </div>
       </div>
     </div>
-    <div class="section section-team text-center">
+    <div class="section section-team text-center mb-4">
       <div class="container">
         <h2 class="title">Partners</h2>
         <p class="description">
