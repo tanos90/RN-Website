@@ -2,7 +2,9 @@
   <div id="app">
     <router-view name="header" />
     <div class="wrapper">
-      <router-view />
+      <transition name="top">
+        <router-view />
+      </transition>
     </div>
     <router-view name="footer" />
   </div>

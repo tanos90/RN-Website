@@ -1,18 +1,16 @@
 <template>
   <div>
     <div class="page-header page-header-small">
-      <parallax class="page-header-image" style="background-image:url('img/main-background.png')"></parallax>
+      <parallax class="page-header-image" style="background-image:url('img/bg5.jpg')"></parallax>
       <div class="content-center">
         <div class="container">
           <transition name="slide">
-            <h1
-              style="transition-duration: 1s;"
-              v-if="isVisible"
-              class="title-text"
-            >Accounting Services</h1>
+            <h1 style="transition-duration: 1s;" v-if="isVisible" class="title-text">
+              <img src="img/logo-text.png" class="logo-text" alt="logo" />
+            </h1>
           </transition>
 
-          <div class="text-center">
+          <!-- <div class="text-center">
             <transition name="top">
               <a
                 href="#pablo"
@@ -43,7 +41,7 @@
                 <i class="fab fa-google-plus"></i>
               </a>
             </transition>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>
@@ -75,21 +73,37 @@
             </div>
             <div class="col-md-5">
               <!-- First image on the right side, above the article -->
-              <div class="image-container image-right" style="background-image: url('img/bg3.jpg')"></div>
-              <h3>Our values.</h3>
-              <h4>INTEGRITY.</h4>
-              <p>We work integrally with our clients, with rectitude and honesty, respecting the highest ethical values of our profession. This integrity reflects our personal values.</p>
-              <h4>INTEGRITY.</h4>
-              <p>
-                We are committed to providing services with the highest quality standards. Quality
-                in our services is not a negotiable aspect.
-              </p>
-              <h4>INDEPENDENCE.</h4>
-              <p>
-                All members of our Firm are independent with respect to our Clients.
-                Independence means we can practice our freedom of professional criteria above any other
-                commitment with our Clients.
-              </p>
+              <div class="image-container image-right" style="background-image: url('img/bg4.jpg')"></div>
+              <transition name="item">
+                <h2 class="title" v-if="showValues">Our values</h2>
+              </transition>
+              <transition name="item">
+                <h4 v-if="showValues">INTEGRITY</h4>
+              </transition>
+              <transition name="item">
+                <span
+                  v-if="showValues"
+                >We work integrally with our clients, with rectitude and honesty, respecting the highest ethical values of our profession. This integrity reflects our personal values.</span>
+              </transition>
+              <transition name="item">
+                <h4 v-if="showValues">QUALITY</h4>
+              </transition>
+              <transition name="item">
+                <span v-if="showValues">
+                  We are committed to providing services with the highest quality standards. Quality
+                  in our services is not a negotiable aspect.
+                </span>
+              </transition>
+              <transition name="item">
+                <h4 v-if="showValues">INDEPENDENCE</h4>
+              </transition>
+              <transition name="item">
+                <span v-if="showValues">
+                  All members of our Firm are independent with respect to our Clients.
+                  Independence means we can practice our freedom of professional criteria above any other
+                  commitment with our Clients.
+                </span>
+              </transition>
             </div>
           </div>
         </div>
@@ -101,16 +115,23 @@
           class="title my-5"
         >Some of the companies and brands who have placed their confidence in us</h2>
         <div class="team">
-          <div class>
-            <infinite-slide-bar duration="20s">
+          <div class="infinite-scroll-container">
+            <!-- <infinite-slide-bar duration="20s">
               <div class="col-md-12 d-flex mt-5">
-                <div class="col-md-2" v-for="client in clients" :key="client.key">
+                <div class="col-md-4" v-for="client in clients" :key="client.key">
                   <div class="float-left client">
                     <img class="img-client" :src="'img/clients/' + client.key + '.png'" />
                   </div>
                 </div>
               </div>
-            </infinite-slide-bar>
+            </infinite-slide-bar>-->
+            <div class="row d-flex mt-5">
+              <div class="col-sm-3 col-md-4 company" v-for="client in clients" :key="client.key">
+                <div class="float-left client">
+                  <img class="img-client" :src="'img/clients/' + client.key + '.png'" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -170,6 +191,7 @@ function resizeThrottler(actualResizeHandler) {
   }
 }
 import { Button, FormGroupInput, InfiniteSlideBar } from "@/components";
+import { setTimeout } from "timers";
 export default {
   name: "landing",
   bodyClass: "landing-page",
@@ -190,6 +212,7 @@ export default {
       },
       isVisible: false,
       startAnimation: false,
+      showValues: false,
       showTeam: false,
       showFirstText: false,
       team: [
@@ -235,8 +258,10 @@ export default {
       let scrollValue =
         document.body.scrollTop || document.documentElement.scrollTop;
       this.currentScrollValue = scrollValue;
-      if (scrollValue > 1900) {
-        console.log("entro");
+      if (scrollValue > 500) {
+        this.showValues = true;
+      }
+      if (scrollValue > 1700) {
         this.showTeam = true;
       }
       if (scrollValue > 1) {
@@ -251,6 +276,11 @@ export default {
     document.addEventListener("scroll", this.scrollListener);
     this.isVisible = true;
     this.startAnimation = true;
+    setTimeout(() => {
+      if (!this.showFirstText) {
+        this.showFirstText = true;
+      }
+    }, 1200);
   },
 
   beforeDestroy() {
@@ -259,6 +289,27 @@ export default {
 };
 </script>
 <style>
+@media (max-width: 600px) {
+  .company {
+    width: 33% !important;
+  }
+}
+.company {
+  filter: grayscale(100%);
+  margin: auto;
+}
+.company:hover {
+  filter: none;
+}
+
+.logo-text {
+  width: 500px;
+}
+
+.infinite-scroll-container {
+  width: 100% !important;
+  max-width: 100% !important;
+}
 .first-text-container {
   min-height: 240px !important;
 }

@@ -299,7 +299,7 @@
   background-color: $orange-bg;
 }
 [data-background-color='black'] {
-  background: linear-gradient(#004364 0%, #000000c4 80%);
+  background: linear-gradient(#004364 100%, #000000 0%);
 }
 
 [data-background-color]:not([data-background-color='gray']) {

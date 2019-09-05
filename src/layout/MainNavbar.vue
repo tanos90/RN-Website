@@ -3,13 +3,13 @@
     class="p-0"
     position="fixed"
     type="primary"
-    :transparent="transparent"
+    :transparent="false"
     :color-on-scroll="colorOnScroll"
     menu-classes="ml-auto"
   >
     <template slot-scope="{ toggle, isToggled }">
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
-        <img src="img/logo.png" class="logo-header" alt="logo" />
+        <img src="img/logo-small.png" class="logo-header" alt="logo" />
       </router-link>
       <el-popover
         ref="popover1"
@@ -22,25 +22,17 @@
       </el-popover>
     </template>
     <template slot="navbar-menu">
-      <li class="nav-item nav-item-link">
-        <nav-link to="/services" class="nav-link nav-item-link">
+      <li class="nav-item nav-item-link"></li>
+      <li class="nav-item nav-item-link"></li>
+      <drop-down tag="li" title="Menu" icon="now-ui-icons design_image" class="nav-item">
+        <nav-link to="/landing">
+          <i class="now-ui-icons education_paper"></i> Home
+        </nav-link>
+        <nav-link to="/services">
           <i class="now-ui-icons business_chart-pie-36"></i> Services
         </nav-link>
-      </li>
-      <li class="nav-item nav-item-link">
-        <nav-link to="/contact" class="nav-link nav-item-link">
+        <nav-link to="/contact">
           <i class="now-ui-icons users_circle-08"></i> Contact
-        </nav-link>
-      </li>
-      <drop-down tag="li" title="Examples" icon="now-ui-icons design_image" class="nav-item">
-        <nav-link to="/landing">
-          <i class="now-ui-icons education_paper"></i> Landing
-        </nav-link>
-        <nav-link to="/login">
-          <i class="now-ui-icons users_circle-08"></i> Login
-        </nav-link>
-        <nav-link to="/profile">
-          <i class="now-ui-icons users_single-02"></i> Profile
         </nav-link>
       </drop-down>
 
