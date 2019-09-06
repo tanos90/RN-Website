@@ -4,7 +4,7 @@
     :class="{ [`footer-${type}`]: type }"
     :data-background-color="backgroundColor"
   >
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center mt-3 mb-1">
       <nav class="col-md-4">
         <ul>
           <li>
@@ -15,18 +15,18 @@
           </li>
         </ul>
       </nav>
-      <div class="col-md-4 row">
+      <div class="col-md-4 row my-2">
         <span class="col-md-12 row">
-          <span class="col-lg-8 col-md-12 col-sm-12">Monday to Friday:</span>
-          <span class="col-lg-4 col-md-12 col-sm-12">8:15 AM - 6:00 PM</span>
+          <span class="col-lg-5 col-md-12 col-sm-12">Monday - Friday:</span>
+          <span class="col-lg-7 col-md-12 col-sm-12">8:15 AM - 6:00 PM</span>
         </span>
         <span class="col-md-12 row">
-          <span class="col-lg-8 col-md-12 col-sm-12">Saturday:</span>
-          <span class="col-lg-4 col-md-12 col-sm-12">8:15 AM - 2:00 PM</span>
+          <span class="col-lg-5 col-md-12 col-sm-12">Saturday:</span>
+          <span class="col-lg-7 col-md-12 col-sm-12">8:15 AM - 2:00 PM</span>
         </span>
       </div>
       <div
-        class="col-md-4 d-flex justify-content-end copyright"
+        class="col-md-4 d-flex justify-content-end copyright mt-auto"
       >&copy; Romero Nieblas & Asociados, S.C. - {{ year }}</div>
     </div>
   </footer>

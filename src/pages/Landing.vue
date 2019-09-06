@@ -46,7 +46,7 @@
       </div>
     </div>
     <div class="section section-about-us">
-      <div class="container">
+      <div class>
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center first-text-container">
             <transition name="item">
@@ -61,50 +61,46 @@
             </transition>
           </div>
         </div>
-        <div class="separator separator-primary"></div>
         <div class="section-story-overview">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mx-4">
               <div class="image-container image-left" style="background-image: url('img/bg2.jpg')">
                 <!-- First image on the left side -->
               </div>
               <!-- Second image on the left side of the article -->
-              <div class="image-container" style="background-image: url('img/bg3.jpg')"></div>
             </div>
             <div class="col-md-5">
-              <!-- First image on the right side, above the article -->
               <div class="image-container image-right" style="background-image: url('img/bg4.jpg')"></div>
-              <transition name="item">
-                <h2 class="title" v-if="showValues">Our values</h2>
-              </transition>
-              <transition name="item">
-                <h4 v-if="showValues">INTEGRITY</h4>
-              </transition>
-              <transition name="item">
-                <span
-                  v-if="showValues"
-                >We work integrally with our clients, with rectitude and honesty, respecting the highest ethical values of our profession. This integrity reflects our personal values.</span>
-              </transition>
-              <transition name="item">
-                <h4 v-if="showValues">QUALITY</h4>
-              </transition>
-              <transition name="item">
-                <span v-if="showValues">
-                  We are committed to providing services with the highest quality standards. Quality
-                  in our services is not a negotiable aspect.
-                </span>
-              </transition>
-              <transition name="item">
-                <h4 v-if="showValues">INDEPENDENCE</h4>
-              </transition>
-              <transition name="item">
-                <span v-if="showValues">
-                  All members of our Firm are independent with respect to our Clients.
-                  Independence means we can practice our freedom of professional criteria above any other
-                  commitment with our Clients.
-                </span>
-              </transition>
             </div>
+            <div class="col-md-12 text-center px-0 py-5 values-container">
+              <div class="mb-5">
+                <!-- First image on the right side, above the article -->
+
+                <transition name="item">
+                  <h2 class="title title-values" v-if="showValues">Our values</h2>
+                </transition>
+                <div v-for="value in values" :key="value.title">
+                  <transition name="item">
+                    <h4
+                      style="transition-duration: 3s;"
+                      v-if="showValues"
+                      class="title-values"
+                    >{{value.title}}</h4>
+                  </transition>
+                  <transition name="item">
+                    <span
+                      style="transition-duration: 3s;"
+                      v-if="showValues"
+                      class="mx-auto text-values"
+                      v-html="value.text"
+                    ></span>
+                  </transition>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="image-values" style="background-image: url('')">
+            <img class="img-client" src="img/bg3.jpg" />
           </div>
         </div>
       </div>
@@ -125,9 +121,13 @@
                 </div>
               </div>
             </infinite-slide-bar>-->
-            <div class="row d-flex mt-5">
-              <div class="col-sm-3 col-md-4 company" v-for="client in clients" :key="client.key">
-                <div class="float-left client">
+            <div class="row d-flex mt-5 justify-content-center">
+              <div
+                class="col-sm-3 col-md-4 d-flex company"
+                v-for="client in clients"
+                :key="client.key"
+              >
+                <div class="float-left client m-auto">
                   <img class="img-client" :src="'img/clients/' + client.key + '.png'" />
                 </div>
               </div>
@@ -215,6 +215,23 @@ export default {
       showValues: false,
       showTeam: false,
       showFirstText: false,
+      values: [
+        {
+          title: "INTEGRITY",
+          text:
+            "We work integrally with our clients, with rectitude and honesty, respecting the highest ethical values of our profession.<br >This integrity reflects our personal values."
+        },
+        {
+          title: "QUALITY",
+          text:
+            "We are committed to providing services with the <b>highest quality standards</b>.<br >Quality in our services is not a negotiable aspect."
+        },
+        {
+          title: "INDEPENDENCE",
+          text:
+            "All members of our Firm are independent with respect to our <b>Clients</b>.<br >Independence means we can practice our freedom of professional criteria above any other commitment with our Clients."
+        }
+      ],
       team: [
         {
           key: 1,
@@ -258,7 +275,7 @@ export default {
       let scrollValue =
         document.body.scrollTop || document.documentElement.scrollTop;
       this.currentScrollValue = scrollValue;
-      if (scrollValue > 500) {
+      if (scrollValue > 400) {
         this.showValues = true;
       }
       if (scrollValue > 1700) {
@@ -274,6 +291,7 @@ export default {
   },
   mounted() {
     document.addEventListener("scroll", this.scrollListener);
+    this.handleScroll();
     this.isVisible = true;
     this.startAnimation = true;
     setTimeout(() => {
@@ -294,9 +312,22 @@ export default {
     width: 33% !important;
   }
 }
+.image-values {
+  height: 200px;
+}
+.title-values {
+  color: #fafafa;
+}
+.text-values {
+  color: #c7c7c7;
+}
+.values-container {
+  background: #1d1c1c;
+}
 .company {
   filter: grayscale(100%);
   margin: auto;
+  text-align: center;
 }
 .company:hover {
   filter: none;
