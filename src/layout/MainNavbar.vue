@@ -9,7 +9,7 @@
   >
     <template slot-scope="{ toggle, isToggled }">
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
-        <img src="img/logo-small.png" class="logo-header" alt="logo" />
+        <img src="img/logo.png" class="logo-header" alt="logo" />
       </router-link>
       <el-popover
         ref="popover1"
@@ -21,59 +21,35 @@
         <div class="popover-body"></div>
       </el-popover>
     </template>
-    <template slot="navbar-menu">
-      <li class="nav-item nav-item-link"></li>
-      <li class="nav-item nav-item-link"></li>
-      <drop-down tag="li" title="Menu" icon="now-ui-icons design_image" class="nav-item">
-        <nav-link to="/landing">
-          <i class="now-ui-icons education_paper"></i> Home
-        </nav-link>
-        <nav-link to="/services">
-          <i class="now-ui-icons business_chart-pie-36"></i> Services
-        </nav-link>
-        <nav-link to="/contact">
-          <i class="now-ui-icons users_circle-08"></i> Contact
-        </nav-link>
-      </drop-down>
 
+    <template slot="navbar-menu">
       <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
-          title="Follow us on Twitter"
-          data-placement="bottom"
-          href="https://twitter.com/CreativeTim"
-          target="_blank"
-        >
-          <i class="fab fa-twitter"></i>
-          <p class="d-lg-none d-xl-none">Twitter</p>
-        </a>
+        <nav-link to="/" class="nav-link top-menu">
+          <i class="now-ui-icons education_paper"></i>
+          {{$t('home')}}
+        </nav-link>
       </li>
       <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
-          title="Like us on Facebook"
-          data-placement="bottom"
-          href="https://www.facebook.com/CreativeTim"
-          target="_blank"
-        >
-          <i class="fab fa-facebook-square"></i>
-          <p class="d-lg-none d-xl-none">Facebook</p>
-        </a>
+        <nav-link to="/services" class="nav-link top-menu">
+          <i class="now-ui-icons business_chart-pie-36"></i>
+          {{$t('services')}}
+        </nav-link>
       </li>
       <li class="nav-item">
+        <nav-link to="/contact" class="nav-link top-menu">
+          <i class="now-ui-icons users_circle-08"></i>
+          {{$t('contact')}}
+        </nav-link>
+      </li>
+      <li class="nav-item float-right menu-languages">
         <a
           class="nav-link"
-          rel="tooltip"
-          title="Follow us on Instagram"
+          v-for="entry in languages"
+          :key="entry.title"
+          @click="changeLocale(entry.language)"
+          v-bind:title="entry.title"
           data-placement="bottom"
-          href="https://www.instagram.com/CreativeTimOfficial"
-          target="_blank"
-        >
-          <i class="fab fa-instagram"></i>
-          <p class="d-lg-none d-xl-none">Instagram</p>
-        </a>
+        >{{entry.title}}</a>
       </li>
     </template>
   </navbar>
@@ -82,6 +58,7 @@
 <script>
 import { DropDown, NavbarToggleButton, Navbar, NavLink } from "@/components";
 import { Popover } from "element-ui";
+import i18n from "@/plugins/i18n";
 export default {
   name: "main-navbar",
   props: {
@@ -94,6 +71,22 @@ export default {
     NavbarToggleButton,
     NavLink,
     [Popover.name]: Popover
+  },
+  data() {
+    return {
+      languages: [
+        { flag: "us", language: "en", title: "English" },
+        { flag: "es", language: "es", title: "Español" }
+      ]
+    };
+  },
+  methods: {
+    changeLocale(locale) {
+      i18n.locale = locale;
+    },
+    mounted() {
+      console.log(this.props);
+    }
   }
 };
 </script>
@@ -102,7 +95,12 @@ export default {
 .logo-header {
   width: 170px;
 }
-.nav-item-link {
+.menu-languages {
+  justify-content: flex-end;
+  display: flex;
+  margin-left: 10px;
+}
+.top-menu {
   color: #fafafa;
 }
 </style>

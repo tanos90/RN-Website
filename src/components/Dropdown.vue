@@ -13,11 +13,7 @@
     v-click-outside="closeDropDown"
   >
     <slot name="title">
-      <a
-        class="dropdown-toggle nav-link"
-        :class="{ 'no-caret': hideArrow }"
-        data-toggle="dropdown"
-      >
+      <a class="dropdown-toggle nav-link" :class="{ 'no-caret': hideArrow }" data-toggle="dropdown">
         <i :class="icon"></i>
         <span class="no-icon">{{ title }}</span>
       </a>
@@ -35,11 +31,11 @@
 </template>
 <script>
 export default {
-  name: 'drop-down',
+  name: "drop-down",
   props: {
     direction: {
       type: String,
-      default: 'down'
+      default: "down"
     },
     title: String,
     icon: String,
@@ -47,7 +43,7 @@ export default {
     hideArrow: Boolean,
     tag: {
       type: String,
-      default: 'li'
+      default: "li"
     }
   },
   data() {
@@ -58,16 +54,16 @@ export default {
   provide() {
     return {
       closeDropDown: this.closeDropDown
-    }
+    };
   },
   methods: {
     toggleDropDown() {
       this.isOpen = !this.isOpen;
-      this.$emit('change', this.isOpen);
+      this.$emit("change", this.isOpen);
     },
     closeDropDown() {
       this.isOpen = false;
-      this.$emit('change', this.isOpen);
+      this.$emit("change", this.isOpen);
     }
   }
 };

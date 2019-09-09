@@ -68,3 +68,9 @@
 .section {
   padding: 10px 0px;
 }
+
+@media screen and (max-width: 991px) {
+  .sidebar-collapse .navbar .navbar-translate {
+    width: 90% !important;
+  }
+}

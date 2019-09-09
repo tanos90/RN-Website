@@ -9,60 +9,27 @@
               <img src="img/logo-text.png" class="logo-text" alt="logo" />
             </h1>
           </transition>
-
-          <!-- <div class="text-center">
-            <transition name="top">
-              <a
-                href="#pablo"
-                class="button btn-primary btn-icon btn-round title-text"
-                style="transition-duration: 2s;"
-                v-if="isVisible"
-              >
-                <i class="fab fa-facebook-square"></i>
-              </a>
-            </transition>
-            <transition name="top">
-              <a
-                href="#pablo"
-                class="button btn-primary btn-icon btn-round"
-                style="transition-duration: 2s;"
-                v-if="isVisible"
-              >
-                <i class="fab fa-twitter"></i>
-              </a>
-            </transition>
-            <transition name="top">
-              <a
-                href="#pablo"
-                class="button btn-primary btn-icon btn-round"
-                style="transition-duration: 2s;"
-                v-if="isVisible"
-              >
-                <i class="fab fa-google-plus"></i>
-              </a>
-            </transition>
-          </div>-->
         </div>
       </div>
     </div>
     <div class="section section-about-us">
       <div class>
-        <div class="row">
+        <div class="row mx-0">
           <div class="col-md-8 ml-auto mr-auto text-center first-text-container">
             <transition name="item">
-              <h2 class="title" v-if="showFirstText">Who we are?</h2>
+              <h2 class="title" v-if="showFirstText">{{$t('aboutUsTitle')}}</h2>
             </transition>
             <transition name="item">
               <h5
                 class="description"
                 v-if="showFirstText"
                 style="transition-duration: 3s;"
-              >Romero Nieblas y Asociados S.C. (hereinafter “Romero Nieblas”) is a firm that specializes in providing accounting, auditing, tax, and business consultancy services to our clients, ensuring a double benefit based on experience and ample knowledge of their needs. In addition, through a series of strategic alliances, we provide specialized services in the matters of labor and fiscal law.</h5>
+              >{{$t('aboutUsText')}}</h5>
             </transition>
           </div>
         </div>
         <div class="section-story-overview">
-          <div class="row">
+          <div class="row mx-0">
             <div class="col-md-6 mx-4">
               <div class="image-container image-left" style="background-image: url('img/bg2.jpg')">
                 <!-- First image on the left side -->
@@ -77,9 +44,9 @@
                 <!-- First image on the right side, above the article -->
 
                 <transition name="item">
-                  <h2 class="title title-values" v-if="showValues">Our values</h2>
+                  <h2 class="title title-values" v-if="showValues">{{$t('valuesTitle')}}</h2>
                 </transition>
-                <div v-for="value in values" :key="value.title">
+                <div v-for="value in values[this.$i18n.locale]" :key="value.title">
                   <transition name="item">
                     <h4
                       style="transition-duration: 3s;"
@@ -107,47 +74,38 @@
     </div>
     <div class="section section-team text-center">
       <div class="container">
-        <h2
-          class="title my-5"
-        >Some of the companies and brands who have placed their confidence in us</h2>
-        <div class="team">
-          <div class="infinite-scroll-container">
-            <!-- <infinite-slide-bar duration="20s">
-              <div class="col-md-12 d-flex mt-5">
-                <div class="col-md-4" v-for="client in clients" :key="client.key">
-                  <div class="float-left client">
-                    <img class="img-client" :src="'img/clients/' + client.key + '.png'" />
-                  </div>
-                </div>
-              </div>
-            </infinite-slide-bar>-->
-            <div class="row d-flex mt-5 justify-content-center">
+        <h2 class="title my-5">{{$t('clientsTitle')}}</h2>
+        <div class="team mx-0 w-100">
+          <slider animation="fade">
+            <slider-item
+              v-for="(i, index) in pages"
+              :key="index"
+              :style="i"
+              class="w-100 row mx-0 mt-5 justify-content-center"
+            >
               <div
                 class="col-sm-3 col-md-4 d-flex company"
-                v-for="client in clients"
+                v-for="client in i.clients"
                 :key="client.key"
               >
-                <div class="float-left client m-auto">
-                  <img class="img-client" :src="'img/clients/' + client.key + '.png'" />
+                <div class="float-left client mx-auto">
+                  <img class="img-client logo-client" :src="'img/clients/' + client.key + '.png'" />
                 </div>
               </div>
-            </div>
-          </div>
+            </slider-item>
+          </slider>
         </div>
       </div>
     </div>
     <div class="section section-team text-center mb-4">
       <div class="container">
-        <h2 class="title">Partners</h2>
-        <p class="description">
-          Our services are provided through the joint management of our Firm Partners, our strategic
-          partners, and the specialized, knowledgeable, and experienced staff members in our office.
-        </p>
+        <h2 class="title">{{$t('partnersTitle')}}</h2>
+        <p class="description">{{$t('partnersText')}}</p>
         <div class="team" v-if="showTeam">
           <template>
-            <sequential-entrance class="row">
-              <div class="row">
-                <div class="col-md-6" v-for="t in team" :key="t.key">
+            <sequential-entrance>
+              <div class="row mx-0">
+                <div class="col-md-6" v-for="t in team[this.$i18n.locale]" :key="t.key">
                   <div class="team-player">
                     <img
                       src="img/avatar.png"
@@ -157,15 +115,9 @@
                     <h4 class="title">{{t.name}}</h4>
                     <p class="category text-primary">{{t.title}}</p>
                     <p class="description" v-html="t.description"></p>
-                    <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                    <!-- <a href="#pablo" class="btn btn-primary btn-icon btn-round">
                       <i class="fab fa-facebook-square"></i>
-                    </a>
+                    </a>-->
                   </div>
                 </div>
               </div>
@@ -190,18 +142,14 @@ function resizeThrottler(actualResizeHandler) {
     }, 66);
   }
 }
-import { Button, FormGroupInput, InfiniteSlideBar } from "@/components";
+import { Button, FormGroupInput } from "@/components";
 import { setTimeout } from "timers";
 export default {
   name: "landing",
   bodyClass: "landing-page",
   components: {
     [Button.name]: Button,
-    [FormGroupInput.name]: FormGroupInput,
-    InfiniteSlideBar
-  },
-  methods: {
-    toggleDropDown() {}
+    [FormGroupInput.name]: FormGroupInput
   },
   data() {
     return {
@@ -215,62 +163,129 @@ export default {
       showValues: false,
       showTeam: false,
       showFirstText: false,
-      values: [
+      pages: [
         {
-          title: "INTEGRITY",
-          text:
-            "We work integrally with our clients, with rectitude and honesty, respecting the highest ethical values of our profession.<br >This integrity reflects our personal values."
+          name: "1",
+          clients: [
+            {
+              key: 1
+            },
+            {
+              key: 2
+            },
+            {
+              key: 3
+            },
+            {
+              key: 4
+            },
+            {
+              key: 5
+            },
+            {
+              key: 6
+            }
+          ]
         },
         {
-          title: "QUALITY",
-          text:
-            "We are committed to providing services with the <b>highest quality standards</b>.<br >Quality in our services is not a negotiable aspect."
-        },
-        {
-          title: "INDEPENDENCE",
-          text:
-            "All members of our Firm are independent with respect to our <b>Clients</b>.<br >Independence means we can practice our freedom of professional criteria above any other commitment with our Clients."
+          name: "2",
+          clients: [
+            {
+              key: 7
+            },
+            {
+              key: 8
+            },
+            {
+              key: 9
+            },
+            {
+              key: 10
+            },
+            {
+              key: 11
+            },
+            {
+              key: 12
+            }
+          ]
         }
       ],
-      team: [
-        {
-          key: 1,
-          name: "Francisco Everardo Romero Ozuna",
-          title: "Public Accountant",
-          description:
-            "With degree from the Universidad de Sonora (2000-04), with a Masters in Taxes from the Universidad del Valle de México (2005-07)."
-        },
-        {
-          key: 2,
-          name: "Jorge Alberto Nieblas Mendivil",
-          title: "Public Accountant",
-          description:
-            "Degree from the Universidad de Sonora (1990-94) <br/ > More than 15 years of experience in the Hotel-Tourism sector, where he has worked as General Accountant as well as Comptroller (2000-2016)."
-        }
-      ],
-      clients: [
-        {
-          key: 1
-        },
-        {
-          key: 2
-        },
-        {
-          key: 3
-        },
-        {
-          key: 4
-        },
-        {
-          key: 5
-        },
-        {
-          key: 6
-        }
-      ]
+      values: {
+        en: [
+          {
+            title: "INTEGRITY",
+            text:
+              "We work integrally with our clients, with rectitude and honesty, respecting the highest ethical values of our profession.<br >This integrity reflects our personal values."
+          },
+          {
+            title: "QUALITY",
+            text:
+              "We are committed to providing services with the <b>highest quality standards</b>.<br >Quality in our services is not a negotiable aspect."
+          },
+          {
+            title: "INDEPENDENCE",
+            text:
+              "All members of our Firm are independent with respect to our <b>Clients</b>.<br >Independence means we can practice our freedom of professional criteria above any other commitment with our Clients."
+          }
+        ],
+        es: [
+          {
+            title: "INTEGRIDAD",
+            text:
+              "Actuamos con nuestros Clientes de manera íntegra, con rectitud y honestidad, respetando los más altos valores éticos de nuestra profesión. Esta integridad es reflejo de nuestros valores personales."
+          },
+          {
+            title: "CALIDAD",
+            text:
+              "Estamos comprometidos a prestar servicios con los más altos estándares de calidad. La calidad en nuestros servicios no debe ser un aspecto negociable."
+          },
+          {
+            title: "INDEPENDENCIA",
+            text:
+              "Todos los miembros de la Firma somos independientes en relación a nuestros Clientes. La Independencia significa ejercer nuestra libertad de criterio profesional sobre cualquier otro compromiso con nuestros Clientes."
+          }
+        ]
+      },
+
+      team: {
+        es: [
+          {
+            key: 1,
+            name: "Francisco Everardo Romero Ozuna",
+            title: "Contador Público",
+            description:
+              "Licenciado en Contaduría Pública por la Universidad de Sonora (2000-04), con Maestría en Impuestos por la Universidad del Valle de México (2005-07)."
+          },
+          {
+            key: 2,
+            name: "Jorge Alberto Nieblas Mendivil",
+            title: "Contador Público",
+            description:
+              "Contador Público por la Universidad de Sonora (1990-94). Con más de 16 años de experiencia en el Sector Hotelero - Turístico, donde se desempeñó como Contador General y más tarde como Contralor (2000-2016)."
+          }
+        ],
+        en: [
+          {
+            key: 1,
+            name: "Francisco Everardo Romero Ozuna",
+            title: "Public Accountant",
+            description:
+              "With degree from the Universidad de Sonora (2000-04), with a Masters in Taxes from the Universidad del Valle de México (2005-07)."
+          },
+          {
+            key: 2,
+            name: "Jorge Alberto Nieblas Mendivil",
+            title: "Public Accountant",
+            description:
+              "Degree from the Universidad de Sonora (1990-94) <br/ > More than 15 years of experience in the Hotel-Tourism sector, where he has worked as General Accountant as well as Comptroller (2000-2016)."
+          }
+        ]
+      }
     };
   },
   methods: {
+    toggleDropDown() {},
     handleScroll() {
       let scrollValue =
         document.body.scrollTop || document.documentElement.scrollTop;
@@ -309,8 +324,29 @@ export default {
 <style>
 @media (max-width: 600px) {
   .company {
-    width: 33% !important;
+    width: 30% !important;
   }
+}
+
+.company {
+  max-height: 250px;
+}
+.slider {
+  width: 100% !important;
+  height: 400px !important;
+}
+.slider-btn {
+  width: 0px !important;
+}
+.slider-indicator-icon {
+  background-color: #c7c7c7 !important;
+}
+.slider-indicator-active {
+  background-color: #004364 !important;
+}
+.slider-btn-right,
+.slider-btn-left {
+  background: #ffffff !important;
 }
 .image-values {
   height: 200px;
@@ -325,22 +361,21 @@ export default {
   background: #1d1c1c;
 }
 .company {
-  filter: grayscale(100%);
-  margin: auto;
+  margin: 10px auto;
   text-align: center;
 }
-.company:hover {
-  filter: none;
+
+.logo-client {
+  width: 80%;
+  max-height: 80px;
+  width: auto;
+  height: auto;
 }
 
 .logo-text {
   width: 500px;
 }
 
-.infinite-scroll-container {
-  width: 100% !important;
-  max-width: 100% !important;
-}
 .first-text-container {
   min-height: 240px !important;
 }

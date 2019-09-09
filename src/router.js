@@ -24,15 +24,6 @@ export default new Router({
       alias: 'landing'
     },
     {
-      path: '/landing',
-      name: 'landing',
-      components: { default: Landing, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-    {
       path: '/login',
       name: 'login',
       components: { default: Login, header: MainNavbar },

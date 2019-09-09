@@ -1,17 +1,12 @@
 <template>
-  <component
-    :is="componentType"
-    :to="to"
-    class="dropdown-item"
-    @click.native.stop="closeNav"
-  >
+  <component :is="componentType" :to="to" class="dropdown-item" @click.native.stop="closeNav">
     <slot></slot>
   </component>
 </template>
 <script>
 export default {
-  name: 'nav-link',
-  inject: ['closeNavbar', 'closeDropDown'],
+  name: "nav-link",
+  inject: ["closeNavbar"],
   props: {
     to: {
       type: [String, Object],
@@ -20,7 +15,7 @@ export default {
   },
   computed: {
     componentType() {
-      return this.to ? 'router-link' : 'a';
+      return this.to ? "router-link" : "a";
     }
   },
   methods: {
@@ -29,7 +24,7 @@ export default {
         this.closeNavbar();
       }
       if (this.closeDropDown) {
-        this.closeDropDown()
+        this.closeDropDown();
       }
     }
   }

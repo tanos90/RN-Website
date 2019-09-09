@@ -4,25 +4,25 @@
     :class="{ [`footer-${type}`]: type }"
     :data-background-color="backgroundColor"
   >
-    <div class="row d-flex justify-content-center mt-3 mb-1">
+    <div class="row d-flex justify-content-center mb-1">
       <nav class="col-md-4">
         <ul>
           <li>
-            <a href="./private_policy_mx.pdf" target="_blank">Privacy Policy</a>
+            <a href="./private_policy_mx.pdf" target="_blank">{{$t('privacyPolicy')}}</a>
           </li>
           <li>
-            <router-link to="/contact">Contact Us</router-link>
+            <router-link to="/contact">{{$t('contactUs')}}</router-link>
           </li>
         </ul>
       </nav>
-      <div class="col-md-4 row my-2">
+      <div class="col-md-4 row">
         <span class="col-md-12 row">
-          <span class="col-lg-5 col-md-12 col-sm-12">Monday - Friday:</span>
-          <span class="col-lg-7 col-md-12 col-sm-12">8:15 AM - 6:00 PM</span>
+          <span class="col-lg-6 col-md-12 col-sm-12">{{$t('mondayToFriday')}}</span>
+          <span class="col-lg-6 col-md-12 col-sm-12">8:15 AM - 6:00 PM</span>
         </span>
         <span class="col-md-12 row">
-          <span class="col-lg-5 col-md-12 col-sm-12">Saturday:</span>
-          <span class="col-lg-7 col-md-12 col-sm-12">8:15 AM - 2:00 PM</span>
+          <span class="col-lg-6 col-md-12 col-sm-12">{{$t('saturday')}}</span>
+          <span class="col-lg-6 col-md-12 col-sm-12">8:15 AM - 2:00 PM</span>
         </span>
       </div>
       <div

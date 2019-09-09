@@ -36,15 +36,21 @@ import {
   faGlobeAmericas,
   faEnvelope,
   faPhone,
-  faUser
+  faUser,
+  faGavel
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import EasySlider from 'vue-easy-slider';
+import VueI18n from 'vue-i18n';
+import i18n from '@/plugins/i18n';
 
 Vue.config.productionTip = false;
 
 Vue.use(NowUiKit);
+Vue.use(VueI18n);
 Vue.use(SequentialEntrance);
+Vue.use(EasySlider);
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyCa1RTzFO_rOa_63jylBlhUxDdo-AeGzwo',
@@ -67,10 +73,12 @@ library.add(faMapMarkerAlt);
 library.add(faEnvelope);
 library.add(faPhone);
 library.add(faUser);
+library.add(faGavel);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 new Vue({
+  i18n,
   router,
   render: h => h(App)
 }).$mount('#app');
