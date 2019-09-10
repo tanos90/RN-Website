@@ -21,8 +21,8 @@
               :key="service.title"
             >
               <font-awesome-icon v-bind:icon="service.icon" class="service-icon" />
-              <div class="col-md-12 service-title">{{service.title}}</div>
-              <div class="col-md-12 description-text">{{service.description}}</div>
+              <div class="col-md-12 service-title" v-html="service.title"></div>
+              <div class="col-md-12 description-text" v-html="service.description"></div>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default {
             title: "Consultancy",
             icon: "user-check",
             description:
-              "We deliver confidence to our clients by providing guidance as to how to optimize their contributions and adequate judicial and asset protection for their shareholders, via one of the following services: a. Consulting on optimization of tax and corporate obligations b. Stock disposal c. Capital movements d. Consulting and support in developing tax calculations and statements e. Consulting and assistance in auditing process on behalf of fiscal authorities."
+              "We deliver confidence to our clients by providing guidance as to how to optimize their contributions and adequate judicial and asset protection for their shareholders, via one of the following services:<br/> <br/><ul class='text-left'><li>Consulting on optimization of tax and corporate obligations.</li><li>Stock disposal.</li><li>Capital movements.</li><li>Consulting and support in developing tax calculations and statements.</li><li>Consulting and assistance in auditing process on behalf of fiscal authorities.</li></ul>"
           },
           {
             title: "Return Procedures & Compensation on Contributions.",
@@ -110,7 +110,7 @@ export default {
             title: "Asesoría Fiscal",
             icon: "user-check",
             description:
-              "Asesoría Fiscal. Aportamos valor a nuestros clientes asesorándolos en la optimización de sus contribuciones y en la adecuada protección jurídica y patrimonial de sus accionistas, a través de alguno de los siguientes servicios: <br />a. Asesoría en la optimización de las obligaciones fiscales y corporativas <br />b. Enajenación de Acciones c. Movimientos de Capital d. Asesoría y apoyo en la elaboración de cálculos y declaraciones fiscales. e. Asesoría y asistencia en los procesos de auditoría por parte de las autoridades fiscales."
+              "Asesoría Fiscal. Aportamos valor a nuestros clientes asesorándolos en la optimización de sus contribuciones y en la adecuada protección jurídica y patrimonial de sus accionistas, a través de alguno de los siguientes servicios: <br /> <br /><ul class='text-left'><li>Asesoría en la optimización de las obligaciones fiscales y corporativas.</li><li>Enajenación de Acciones.</li><li>Movimientos de Capital.</li><li>Asesoría y apoyo en la elaboración de cálculos y declaraciones fiscales.</li><li>Asesoría y asistencia en los procesos de auditoría por parte de las autoridades fiscales.</li></ul>"
           },
           {
             title:
