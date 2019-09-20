@@ -6,7 +6,11 @@
         <div class="container">
           <transition name="top">
             <h1 style="transition-duration: 1s;" v-if="isVisible" class="title-text">
-              <img src="img/logo-text.png" class="logo-text" alt="logo" />
+              <span class="logo-text d-block">ROMERO NIEBLAS</span>
+              <span class="logo-text d-block second-line-logo">& ASOCIADOS S.C.</span>
+              <span
+                class="logo-text d-block third-line-logo"
+              >CONTABILIDAD | CONSULTORÍA | CUMPLMIENTO FISCAL</span>
             </h1>
           </transition>
         </div>
@@ -459,5 +463,15 @@ export default {
 .item-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(30px);
+}
+.logo-text {
+  margin: 0 auto;
+  font-family: "Constantia";
+}
+.second-line-logo {
+  color: #a0a0a0;
+}
+.third-line-logo {
+  font-size: 15px !important;
 }
 </style>

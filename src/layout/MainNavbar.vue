@@ -100,7 +100,8 @@ export default {
   display: flex;
   margin-left: 10px;
 }
-.top-menu {
+.top-menu,
+.top-menu:hover {
   color: #fafafa;
 }
 </style>
