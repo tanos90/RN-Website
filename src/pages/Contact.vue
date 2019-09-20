@@ -23,16 +23,16 @@
             <p>
               <font-awesome-icon icon="map-marker-alt" class="mx-2" />
               <a class="adr js-anchor">
-                <span class="address">Av Coahuila 444, Benito Juárez, 83554</span>
+                <span class="address">Av Coahuila 444 Interior C1, Benito Juárez, 83554</span>
               </a>
             </p>
             <p>
               <font-awesome-icon icon="envelope" class="mx-2" />
-              <a class="email" href="mailto:contact@example.com">ventas@contact.com</a>
+              <a class="email" href="mailto:contact@example.com">info@rnyasociados.com.mx</a>
             </p>
             <p>
               <font-awesome-icon icon="phone" class="mx-2" />
-              <a class="email" href="tel:+526862515071">555 555 5555</a>
+              <a class="email" href="tel:+526862515071">638-383-6320</a>
             </p>
           </div>
         </div>

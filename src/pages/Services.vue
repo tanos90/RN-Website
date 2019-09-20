@@ -95,10 +95,10 @@ export default {
         ],
         es: [
           {
-            title: "Cotabilidad",
+            title: "Contabilidad",
             icon: "calculator",
             description:
-              "El correcto registro y proceso de las operaciones de nuestros clientes, conforme las NIF`s, permiten generar información oportuna, cuantitativa y cualitativa para la toma de decisiones."
+              "El correcto registro y proceso de las operaciones de nuestros clientes, conforme a las NIF`s, permiten generar información oportuna, cuantitativa y cualitativa para la toma de decisiones."
           },
           {
             title: "Auditoria",
@@ -162,6 +162,7 @@ export default {
 }
 .title {
   font-size: 32px;
+  padding-bottom: 30px;
 }
 
 .category {
@@ -190,5 +191,4 @@ export default {
   border-radius: 50%;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
-
 </style>
