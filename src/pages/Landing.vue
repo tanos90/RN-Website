@@ -89,7 +89,7 @@
                 :key="client.key"
               >
                 <div class="float-left client mx-auto">
-                  <a :href="client.url">
+                  <a :href="client.url" target="_blank">
                     <img class="img-client logo-client" :src="'img/clients/' + client.key + '.png'" />
                   </a>
                 </div>
