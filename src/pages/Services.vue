@@ -163,8 +163,7 @@ export default {
 .title {
   font-size: 32px;
 }
-.service-subtitle {
-}
+
 .category {
   font-size: 24px;
   font-weight: 400 !important;
@@ -191,7 +190,5 @@ export default {
   border-radius: 50%;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
-.service-container {
-  /* background: #1d1c1c !important; */
-}
+
 </style>

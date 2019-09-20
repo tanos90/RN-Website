@@ -18,11 +18,11 @@
       <div class="col-md-4 row">
         <span class="col-md-12 row">
           <span class="col-lg-6 col-md-12 col-sm-12">{{$t('mondayToFriday')}}</span>
-          <span class="col-lg-6 col-md-12 col-sm-12">8:15 AM - 6:00 PM</span>
+          <span class="col-lg-6 col-md-12 col-sm-12">9:00 AM - 6:00 PM</span>
         </span>
         <span class="col-md-12 row">
           <span class="col-lg-6 col-md-12 col-sm-12">{{$t('saturday')}}</span>
-          <span class="col-lg-6 col-md-12 col-sm-12">8:15 AM - 2:00 PM</span>
+          <span class="col-lg-6 col-md-12 col-sm-12">9:00 AM - 2:00 PM</span>
         </span>
       </div>
       <div

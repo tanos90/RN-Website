@@ -89,7 +89,9 @@
                 :key="client.key"
               >
                 <div class="float-left client mx-auto">
-                  <img class="img-client logo-client" :src="'img/clients/' + client.key + '.png'" />
+                  <a :href="client.url">
+                    <img class="img-client logo-client" :src="'img/clients/' + client.key + '.png'" />
+                  </a>
                 </div>
               </div>
             </slider-item>
@@ -168,48 +170,55 @@ export default {
           name: "1",
           clients: [
             {
-              key: 1
+              key: 1,
+              url: "https://www.rockypointbeachhomerentals.com",
+              name: "Mar de Cortez"
             },
             {
-              key: 2
+              key: 2,
+              url: "http://deviseis.com/",
+              name: "Devise IS"
             },
             {
-              key: 3
+              key: 3,
+              url: "https://casago.com",
+              name: "Casa Go"
             },
             {
-              key: 4
+              key: 4,
+              url: "https://fmirentals.com",
+              name: "FMI"
             },
             {
-              key: 5
+              key: 8,
+              url: "http://plinio-rivero.com/",
+              name: "Plinio Rivero"
             },
             {
-              key: 6
-            }
-          ]
-        },
-        {
-          name: "2",
-          clients: [
-            {
-              key: 7
-            },
-            {
-              key: 8
-            },
-            {
-              key: 9
-            },
-            {
-              key: 10
-            },
-            {
-              key: 11
-            },
-            {
-              key: 12
+              key: 6,
+              url: "http://vistamerica.net/",
+              name: "Vistamerica"
             }
           ]
         }
+        // {
+        //   name: "2",
+        //   clients: [
+        //     {
+        //       key: 7,
+        //       url: "http://islasdelmar.com/",
+        //       name: "Islas del Mar"
+        //     },
+        //     {
+        //       key: 8,
+        //       url: "http://plinio-rivero.com/",
+        //       name: "Plinio Rivero"
+        //     },
+        //     {
+        //       key: 9
+        //     }
+        //   ]
+        // }
       ],
       values: {
         en: [
@@ -271,7 +280,7 @@ export default {
             name: "Francisco Everardo Romero Ozuna",
             title: "Public Accountant",
             description:
-              "With degree from the Universidad de Sonora (2000-04), with a Masters in Taxes from the Universidad del Valle de México (2005-07)."
+              "With degree from the Universidad de Sonora (2000-04), with a Masters in Taxes from the Universidad del Valle de México (2005-07), with 16 years of experience"
           },
           {
             key: 2,

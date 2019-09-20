@@ -7,7 +7,7 @@ const messages = {
   en: {
     aboutUsTitle: 'Who we are?',
     aboutUsText:
-      'Romero Nieblas y Asociados S.C. (hereinafter “Romero Nieblas”) is a firm that specializes in providing accounting, auditing, tax, and business consultancy services to our clients, ensuring a double benefit based on experience and ample knowledge of their needs. In addition, through a series of strategic alliances, we provide specialized services in the matters of labor and fiscal law.',
+      'Romero Nieblas y Asociados S.C. is a firm that specializes in providing accounting, auditing, tax, and business consultancy services to our clients, ensuring a double benefit based on experience and ample knowledge of their needs. In addition, through a series of strategic alliances, we provide specialized services in the matters of labor and tax law.',
     valuesTitle: 'Our values',
     clientsTitle:
       'Some of the companies and brands who have placed their confidence in us',
@@ -42,10 +42,10 @@ const messages = {
     home: 'Inicio',
     services: 'Servicios',
     contact: 'Contacto',
-    contactUs: 'Contactanos',
+    contactUs: 'Contáctenos',
     privacyPolicy: 'Aviso de Privacidad',
     mondayToFriday: 'Lunes a Viernes',
-    saturday: 'Sabado'
+    saturday: 'Sábado'
   }
 };
 
