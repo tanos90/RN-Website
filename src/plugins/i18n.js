@@ -29,7 +29,7 @@ const messages = {
   es: {
     aboutUsTitle: '¿Quiénes Somos?',
     aboutUsText:
-      'Romero Nieblas y Asociados S.C. (“Romero Nieblas” en adelante) es una firma especializada en proveer a sus clientes servicios en materia de contabilidad, auditoría, impuestos y asesoría de negocios, ofreciendo un beneficio doble a nuestros clientes: experiencia y amplio conocimiento de sus necesidades. Así mismo, mediante una serie de alianzas estratégicas, se proveen servicios especializados en materia laboral y derecho fiscal.',
+      'Romero Nieblas y Asociados S.C. es una firma especializada en proveer a sus clientes servicios en materia de contabilidad, auditoría, impuestos y asesoría de negocios, ofreciendo un beneficio doble a nuestros clientes: experiencia y amplio conocimiento de sus necesidades. Así mismo, mediante una serie de alianzas estratégicas, se proveen servicios especializados en materia laboral y derecho fiscal.',
     valuesTitle: 'Nuestros Valores',
     clientsTitle:
       'Algunas de las empresas y marcas que han confiado en nosotros',
