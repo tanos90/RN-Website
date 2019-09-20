@@ -42,7 +42,7 @@ const messages = {
     home: 'Inicio',
     services: 'Servicios',
     contact: 'Contacto',
-    contactUs: 'Contáctenos',
+    contactUs: 'Contáctanos',
     privacyPolicy: 'Aviso de Privacidad',
     mondayToFriday: 'Lunes a Viernes',
     saturday: 'Sábado'
