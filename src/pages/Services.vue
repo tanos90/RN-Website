@@ -104,7 +104,7 @@ export default {
             title: "Auditoria",
             icon: "clipboard-list",
             description:
-              "A través del Área de Auditoria servimos a nuestros clientes y aportamos valor al revisar que su información financiera cumpla con las NIF’s y de cumplimiento a sus obligaciones, para la confianza de Socios, Consejeros, Directores, Administradores, Bancos y Acreedores así como en auditorias fiscales."
+              "A través del Área de Auditoria servimos a nuestros clientes y aportamos valor al revisar que su información financiera cumpla con a las NIF’s y de cumplimiento a sus obligaciones, para la confianza de Socios, Consejeros, Directores, Administradores, Bancos y Acreedores así como en auditorias fiscales."
           },
           {
             title: "Asesoría Fiscal",

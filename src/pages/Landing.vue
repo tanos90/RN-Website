@@ -89,9 +89,14 @@
                 :key="client.key"
               >
                 <div class="float-left client mx-auto">
-                  <a :href="client.url" target="_blank">
+                  <a :href="client.url" v-if="client.url!==''" target="_blank">
                     <img class="img-client logo-client" :src="'img/clients/' + client.key + '.png'" />
                   </a>
+                  <img
+                    class="img-client logo-client"
+                    v-if="client.url === ''"
+                    :src="'img/clients/' + client.key + '.png'"
+                  />
                 </div>
               </div>
             </slider-item>
@@ -190,35 +195,83 @@ export default {
               name: "FMI"
             },
             {
-              key: 8,
+              key: 5,
               url: "http://plinio-rivero.com/",
               name: "Plinio Rivero"
             },
             {
               key: 6,
-              url: "http://vistamerica.net/",
-              name: "Vistamerica"
+              url: "http://newportsvcs.com/",
+              name: "New Port"
             }
           ]
+        },
+        {
+          name: "2",
+          clients: [
+            {
+              key: 7,
+              url: "http://islasdelmar.com/",
+              name: "Islas del Mar"
+            },
+            {
+              key: 8,
+              url: "",
+              name: "PIX"
+            },
+            {
+              key: 9,
+              url: "http://vistamerica.net/",
+              name: "Vistamerica"
+            },
+            {
+              key: 10,
+              url: "https://www.princesapuertopenasco.com.mx/",
+              name: "Hotel princesa peñasco"
+            },
+            {
+              key: 11,
+              url: "https://www.facebook.com/Alkilaeventos/",
+              name: ""
+            },
+            {
+              key: 12,
+              url: "",
+              name: "Notaria Publica 75"
+            }
+          ]
+        },
+        {
+          name: "3",
+          clients: [
+            {
+              key: 13,
+              url: "",
+              name: "La regional"
+            },
+            {
+              key: 14,
+              url: "Alicia",
+              name: "NSD"
+            },
+            {
+              key: 15,
+              url: "",
+              name: "Plaza Pelicanos"
+            },
+            {
+              key: 16,
+              url: "",
+              name: "RCC"
+            },
+            {
+              key: 17,
+              url: "",
+              name: "Mickeys place"
+            },
+            { key: 6, url: "http://newportsvcs.com/", name: "New Port" }
+          ]
         }
-        // {
-        //   name: "2",
-        //   clients: [
-        //     {
-        //       key: 7,
-        //       url: "http://islasdelmar.com/",
-        //       name: "Islas del Mar"
-        //     },
-        //     {
-        //       key: 8,
-        //       url: "http://plinio-rivero.com/",
-        //       name: "Plinio Rivero"
-        //     },
-        //     {
-        //       key: 9
-        //     }
-        //   ]
-        // }
       ],
       values: {
         en: [
