@@ -98,13 +98,13 @@ export default {
             title: "Contabilidad",
             icon: "calculator",
             description:
-              "El correcto registro y proceso de las operaciones de nuestros clientes, conforme a las NIF`s, permiten generar información oportuna, cuantitativa y cualitativa para la toma de decisiones."
+              "El correcto registro y proceso de las operaciones de nuestros clientes, conforme a las NIFs, permiten generar información oportuna, cuantitativa y cualitativa para la toma de decisiones."
           },
           {
             title: "Auditoria",
             icon: "clipboard-list",
             description:
-              "A través del Área de Auditoria servimos a nuestros clientes y aportamos valor al revisar que su información financiera cumpla con a las NIF’s y de cumplimiento a sus obligaciones, para la confianza de Socios, Consejeros, Directores, Administradores, Bancos y Acreedores así como en auditorias fiscales."
+              "A través del Área de Auditoria servimos a nuestros clientes y aportamos valor al revisar que su información financiera cumpla con a las NIFs y de cumplimiento a sus obligaciones, para la confianza de Socios, Consejeros, Directores, Administradores, Bancos y Acreedores así como en auditorias fiscales."
           },
           {
             title: "Asesoría Fiscal",

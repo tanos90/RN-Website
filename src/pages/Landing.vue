@@ -112,14 +112,16 @@
           <template>
             <sequential-entrance>
               <div class="row mx-0">
-                <div class="col-md-6" v-for="t in team[this.$i18n.locale]" :key="t.key">
+                <div class="col-md-6 mb-4" v-for="t in team[this.$i18n.locale]" :key="t.key">
                   <div class="team-player">
                     <img
                       src="img/avatar.png"
                       alt="Thumbnail Image"
                       class="rounded-circle img-fluid img-raised"
                     />
-                    <h4 class="title">{{t.name}}</h4>
+                    <h4 class="title name-player mb-2 pb-0">
+                      <div class="name">{{t.name}}</div>
+                    </h4>
                     <p class="category text-primary">{{t.title}}</p>
                     <p class="description" v-html="t.description"></p>
                     <!-- <a href="#pablo" class="btn btn-primary btn-icon btn-round">
@@ -333,7 +335,7 @@ export default {
             name: "Francisco Everardo Romero Ozuna",
             title: "Public Accountant",
             description:
-              "With degree from the Universidad de Sonora (2000-04), with a Masters in Taxes from the Universidad del Valle de México (2005-07), with 16 years of experience"
+              "Degree from the Universidad de Sonora (2000-04), with a Masters in Taxes from the Universidad del Valle de México (2005-07), with 16 years of experience"
           },
           {
             key: 2,
@@ -415,6 +417,16 @@ export default {
 }
 .title-values {
   color: #fafafa;
+}
+
+@media (min-width: 500px) {
+  .name-player {
+    min-height: 175px;
+  }
+}
+.name {
+  max-width: 350px;
+  margin: auto;
 }
 .text-values {
   color: #c7c7c7;
