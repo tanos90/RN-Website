@@ -440,8 +440,8 @@ export default {
 }
 
 .logo-client {
-  width: 80%;
-  max-height: 80px;
+  width: 90%;
+  max-height: 110px;
   width: auto;
   height: auto;
 }
