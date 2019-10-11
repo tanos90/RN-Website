@@ -115,7 +115,7 @@
                 <div class="col-md-6 mb-4" v-for="t in team[this.$i18n.locale]" :key="t.key">
                   <div class="team-player">
                     <img
-                      src="img/avatar.png"
+                      :src="'img/' + t.key + '.jpeg'"
                       alt="Thumbnail Image"
                       class="rounded-circle img-fluid img-raised"
                     />
@@ -411,6 +411,9 @@ export default {
 .slider-btn-right,
 .slider-btn-left {
   background: #ffffff !important;
+}
+.slider-indicators {
+  bottom: 0px !important;
 }
 .image-values {
   height: 200px;

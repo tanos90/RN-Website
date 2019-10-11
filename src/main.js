@@ -53,7 +53,7 @@ Vue.use(SequentialEntrance);
 Vue.use(EasySlider);
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyABxAtu6pwGxJNTu_KFDN9Y_fd33owdYPQ',
+    key: 'AIzaSyAlHai9MslPilBuf1aQcszbwBsIhkq3IrE',
     libraries: 'places'
   },
 
